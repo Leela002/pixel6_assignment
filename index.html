@@ -1,0 +1,51 @@
+<html>
+<head><title>Loan Application</title>
+<script type="text/javascript">
+            function passvalue()
+	{
+                        var name=document.getElementById("fullName").value;
+                        localStorage.setItem("textvalue",name);
+                        var email=document.getElementById("email").value;
+	     localStorage.setItem("email",email);
+	     return false;
+	}
+</script>
+</head>
+<body background="D:\Leela\pixel6 assignmemt\Loan page_bg.jpg">
+<style>
+form
+{      
+        Background-color:#D1F2EB ;
+        align:center;
+        width:500px;
+}
+.form_box
+{  align:center;
+    opacity:0.8;
+        
+}
+</style>
+<div class="form_box" align="center">
+<form action="confirm.html">
+<form align="center"  >
+<fieldset>
+<legend align="center"><H2><i>Loan Form</i></h2></legend>
+
+<label for="fullname"><b>Full Name:</b></label>
+ <input type="text" id="fullName" name="fullName" pattern="[A-Za-z ]{4,}" required><br><br>
+
+<label for="email"><b>Email :</b></label>
+<input type="email" id="email" name="email" required><br><br>
+
+<label for="pan"><b>PAN:</b></label>
+<input type="text" id="pan" name="pan"pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required><br><br>
+
+<label for="loan_amount"><b>Loan Amount:</b></label>
+<input type="number" id="loan_amount" name="loan_amount" max="9999999" required>
+<button type="button" onclick="convertAmountToWords()">In Words</button><br><br>
+<p id="amountInWords"></p>
+<input type="Submit" value="Submit" onclick="passvalue();"/>
+</fieldset>
+</form></div>
+</body>
+</html>

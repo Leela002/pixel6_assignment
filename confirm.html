@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Confirmation</title>
+</head>
+
+<h3> Dear <span id="result"></span>
+    <script>
+        document.getElementById("result").innerHTML = localStorage.getItem("textvalue");
+    </script> <br><br> Thank you for your inquiry. A 4 digit verification number has been sent to your email: <span id="email"></span> <br>please enter it in the following box and submit for confirmation:
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+        document.getElementById('email').innerText = email;
+    </script>
+
+  
+  <script>
+    // Function to generate a random OTP
+    function generateOTP(length) {
+      var digits = '0123456789';
+      var otp = ' ';
+      
+      for (var i = 0; i < length; i++) {
+        otp += digits[Math.floor(Math.random() * 10)];
+      }
+      
+      console.log('Generated OTP:', otp);
+      return otp;
+    }
+
+    // Function to validate the OTP
+    function validateOTP() {
+      var enteredOTP = document.getElementById('otpInput').value;
+      var generatedOTP = // Retrieve the generated OTP, you can store it in a variable or fetch from any source
+      
+      if (enteredOTP === generatedOTP) {
+        console.log('OTP is valid.');
+        alert('OTP is valid.');
+      } else {
+        console.log('Invalid OTP.');
+        alert('Invalid OTP.');
+      }
+    }
+  </script>
+
+  
+  <button onclick="generateOTP()">Generate OTP</button>
+  <br><br>
+  
+  <input type="text" id="otpInput" placeholder="Enter OTP">
+  <button onclick="validateOTP()">Validate</button>
+<body background="D:\Leela\pixel6 assignmemt\confim_bg.jpg">
+</body>
+</html>
